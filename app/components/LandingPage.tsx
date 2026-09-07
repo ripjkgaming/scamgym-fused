@@ -8,16 +8,21 @@ import {
   Bank,
   Buildings,
   CaretRight,
+  ChatCircleText,
   CheckCircle,
+  EnvelopeSimple,
+  GlobeHemisphereWest,
   MagnifyingGlass,
   Microphone,
   Package,
   Pause,
+  Phone,
   PhoneDisconnect,
   Printer,
   ShieldCheck,
   Siren,
   SpeakerHigh,
+  UsersThree,
   WarningCircle,
 } from "@phosphor-icons/react";
 import { SimulatorPhone } from "@/app/components/Simulator";
@@ -56,6 +61,14 @@ const ROUTINE = [
   { icon: Pause, step: "Pause", body: "Say: “I need to think about this.” Urgency loses its grip the moment you stop answering at their speed." },
   { icon: PhoneDisconnect, step: "Hang up", body: "You never need permission to end a call. The dial tone is a complete sentence." },
   { icon: MagnifyingGlass, step: "Verify alone", body: "Find the number yourself — card, bill, official site — and call back. Never use the number they gave you." },
+];
+
+const SCAM_GUIDES = [
+  { id: "text-sms", title: "Text or SMS scams", icon: ChatCircleText },
+  { id: "phone", title: "Phone scams", icon: Phone },
+  { id: "email", title: "Email scams", icon: EnvelopeSimple },
+  { id: "social-media", title: "Social media scams", icon: UsersThree },
+  { id: "websites", title: "Website scams", icon: GlobeHemisphereWest },
 ];
 
 export default function LandingPage() {
@@ -334,6 +347,24 @@ export default function LandingPage() {
         </div>
       </section>
 
+      <section className="chapter" id="scam-types" aria-labelledby="chapter-scam-guides" lang="en">
+        <div className="chapter-head">
+          <span className="chapter-no"><ShieldCheck size={22} aria-hidden="true" /></span>
+          <div><p className="eyebrow">Five channels. A safer next step.</p><h2 id="chapter-scam-guides">Explore the scam guides.</h2></div>
+          <p className="chapter-side">Realistic examples, warning signs and interactive practice. These English-language guides include Australian safety resources.</p>
+        </div>
+        <div className="scenario-strip">
+          {SCAM_GUIDES.map(({ id, title, icon: Icon }) => (
+            // A full navigation also stops any pending work in the embedded call.
+            <a key={id} className="scenario-card" style={{ translate: "none" }} href={`/scams/${id}`}>
+              <span className="scenario-icon"><Icon size={24} weight="duotone" aria-hidden="true" /></span>
+              <strong>{title}</strong>
+              <span className="scenario-go">Open the guide <CaretRight size={16} aria-hidden="true" /></span>
+            </a>
+          ))}
+        </div>
+      </section>
+
       {/* ── 03 · Check tools · split ─────────────────────────── */}
       <section className="chapter tools" id="check" aria-labelledby="chapter-check">
         <div className="tools-grid">
@@ -434,6 +465,7 @@ export default function LandingPage() {
             <a href="#rehearse">{t.navPractice}</a>
             <a href="#signs">{t.navSigns}</a>
             <a href="#check">{t.navTools}</a>
+            <a href="#scam-types" lang="en">Scam guides</a>
             <a href="/practice">Full rehearsal</a>
           </nav>
           <p className="colophon-line small">
