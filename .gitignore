@@ -1,0 +1,12 @@
+node_modules
+.next
+out
+coverage
+playwright-report
+test-results
+output
+*.tsbuildinfo
+.env
+.env.local
+public/demo-audio/*.mp3
+!public/demo-audio/.gitkeep

@@ -1,0 +1,105 @@
+import type { LanguageCode, Tactic } from "@/lib/types";
+
+export const languages: Array<{ code: LanguageCode; label: string; short: string }> = [
+  { code: "en", label: "English", short: "EN" },
+  { code: "zh", label: "华语", short: "华" },
+  { code: "ms", label: "Bahasa Melayu", short: "MS" },
+  { code: "ta", label: "தமிழ்", short: "த" },
+];
+
+const copy = {
+  en: {
+    brand: "ScamGym", eyebrow: "Practise safely", setupTitle: "Would you spot the warning signs?",
+    setupBody: "Choose a call. Practise what to say before a scammer catches you off guard.",
+    chooseLanguage: "Choose your language", chooseScenario: "Choose a practice call", continue: "Continue",
+    safetyTitle: "This is only a simulation", safetyBody: "Never share real passwords, OTPs, account numbers, addresses, or phone numbers. Anything sensitive will be removed.",
+    understand: "I understand", incoming: "Incoming practice call", simulated: "Safe simulation", answer: "Answer call", decline: "Go back",
+    listening: "Listening...", holdToSpeak: "Tap to speak", release: "Tap again to send", typeInstead: "Type instead",
+    typeLabel: "Your reply", typePlaceholder: "Type what you would say", send: "Send", endCall: "End call", callerSpeaking: "Caller is speaking...",
+    preparing: "Preparing the call...", analysing: "Reviewing your choices...", transcript: "Call transcript", practice: "Practice call",
+    debriefTitle: "Your scam resistance review", scoreLabel: "Resistance score", spotted: "Your five safety skills", missed: "Warning signs to remember",
+    safer: "A safer response", listenCoach: "Listen to coach", stopCoach: "Stop audio", retry: "Practise again", newScenario: "Choose another call",
+    points: "points", fallback: "Audio is unavailable. You can continue by reading the caller's message.", micError: "Microphone access failed. Type your reply instead.",
+    networkError: "The service is taking too long. Try again or use demo mode.", redacted: "Sensitive-looking information was removed for your safety.",
+    loadingAudio: "Preparing audio...", elapsed: "Call time", privacy: "Nothing is saved after this practice session.",
+    progressSetup: "Choose", progressCall: "Practise", progressReview: "Review", proofLine: "3 scam types · 4 languages · private by design",
+    pressureMap: "How the pressure changed", pressureMapBody: "See the tactic behind each caller message. These labels stayed hidden during the call.",
+    safetyRoutine: "Your three-step exit plan", safetyRoutineBody: "Use the same simple routine whenever an unexpected caller pressures you.",
+    routinePause: "Pause", routinePauseBody: "Do not let urgency make the decision.", routineHangUp: "Hang up", routineHangUpBody: "You never need permission to end a call.",
+    routineVerify: "Verify", routineVerifyBody: "Find the official number yourself and call back.", printPlan: "Print safety plan",
+    trainingOnly: "Practice only — this is not a real call", replayCaller: "Hear the last message again", callTip: "You can hang up at any time. Never use real personal details.",
+  },
+  zh: {
+    brand: "ScamGym", eyebrow: "安全练习", setupTitle: "您能发现诈骗警讯吗？", setupBody: "选择一种来电情境，练习如何冷静应对诈骗。",
+    chooseLanguage: "选择语言", chooseScenario: "选择练习来电", continue: "继续", safetyTitle: "这只是模拟练习",
+    safetyBody: "切勿透露真实密码、OTP、账户号码、地址或电话号码。系统会删除任何敏感信息。", understand: "我明白了",
+    incoming: "练习来电", simulated: "安全模拟", answer: "接听", decline: "返回", listening: "正在聆听…", holdToSpeak: "点按开始说话",
+    release: "再点一次发送", typeInstead: "改用文字", typeLabel: "您的回答", typePlaceholder: "输入您会说的话", send: "发送", endCall: "结束通话",
+    callerSpeaking: "对方正在说话…", preparing: "正在准备来电…", analysing: "正在分析您的选择…", transcript: "通话记录", practice: "练习来电",
+    debriefTitle: "您的防诈骗评估", scoreLabel: "防骗分数", spotted: "您的五项安全技能", missed: "请记住的警讯", safer: "更安全的回应",
+    listenCoach: "聆听教练建议", stopCoach: "停止播放", retry: "再练一次", newScenario: "选择其他来电", points: "分",
+    fallback: "语音暂时无法播放。您可阅读信息继续练习。", micError: "无法使用麦克风，请改用文字回答。", networkError: "服务回应时间过长，请重试或使用演示模式。",
+    redacted: "为了您的安全，系统已删除疑似敏感信息。", loadingAudio: "正在准备语音…", elapsed: "通话时间", privacy: "练习结束后不会保存任何内容。",
+    progressSetup: "选择", progressCall: "练习", progressReview: "复盘", proofLine: "3类诈骗 · 4种语言 · 隐私优先",
+    pressureMap: "话术压力如何变化", pressureMapBody: "查看每句话背后的诈骗手法。通话时这些标签不会显示。",
+    safetyRoutine: "三步脱身方法", safetyRoutineBody: "遇到陌生来电施压时，重复使用这套简单方法。",
+    routinePause: "先暂停", routinePauseBody: "不要在催促下做决定。", routineHangUp: "挂电话", routineHangUpBody: "您无需得到对方同意即可结束通话。",
+    routineVerify: "自行核实", routineVerifyBody: "自己寻找官方号码，再拨打确认。", printPlan: "打印安全计划",
+    trainingOnly: "仅供练习——这不是真实来电", replayCaller: "再听一次上一句话", callTip: "您可随时挂断。切勿使用真实个人资料。",
+  },
+  ms: {
+    brand: "ScamGym", eyebrow: "Berlatih dengan selamat", setupTitle: "Bolehkah anda kesan tanda amaran?", setupBody: "Pilih panggilan dan berlatih sebelum penipu mengejutkan anda.",
+    chooseLanguage: "Pilih bahasa", chooseScenario: "Pilih panggilan latihan", continue: "Teruskan", safetyTitle: "Ini hanyalah simulasi",
+    safetyBody: "Jangan kongsi kata laluan, OTP, nombor akaun, alamat atau nombor telefon sebenar. Maklumat sensitif akan dipadam.", understand: "Saya faham",
+    incoming: "Panggilan latihan masuk", simulated: "Simulasi selamat", answer: "Jawab panggilan", decline: "Kembali", listening: "Sedang mendengar...",
+    holdToSpeak: "Ketik untuk bercakap", release: "Ketik lagi untuk hantar", typeInstead: "Taip jawapan", typeLabel: "Jawapan anda", typePlaceholder: "Taip apa yang anda akan katakan",
+    send: "Hantar", endCall: "Tamatkan panggilan", callerSpeaking: "Pemanggil sedang bercakap...", preparing: "Menyediakan panggilan...", analysing: "Menilai pilihan anda...",
+    transcript: "Transkrip panggilan", practice: "Panggilan latihan", debriefTitle: "Ulasan ketahanan scam anda", scoreLabel: "Skor ketahanan", spotted: "Lima kemahiran keselamatan anda",
+    missed: "Tanda amaran untuk diingati", safer: "Jawapan yang lebih selamat", listenCoach: "Dengar jurulatih", stopCoach: "Hentikan audio", retry: "Berlatih lagi",
+    newScenario: "Pilih panggilan lain", points: "mata", fallback: "Audio tidak tersedia. Anda boleh teruskan dengan membaca mesej pemanggil.",
+    micError: "Akses mikrofon gagal. Taip jawapan anda.", networkError: "Perkhidmatan mengambil masa terlalu lama. Cuba lagi atau guna mod demo.", redacted: "Maklumat sensitif telah dipadam demi keselamatan anda.",
+    loadingAudio: "Menyediakan audio...", elapsed: "Masa panggilan", privacy: "Tiada maklumat disimpan selepas sesi latihan ini.",
+    progressSetup: "Pilih", progressCall: "Berlatih", progressReview: "Ulas", proofLine: "3 jenis scam · 4 bahasa · privasi terjaga",
+    pressureMap: "Bagaimana tekanan berubah", pressureMapBody: "Lihat taktik di sebalik setiap mesej pemanggil. Label ini disembunyikan semasa panggilan.",
+    safetyRoutine: "Pelan keluar tiga langkah", safetyRoutineBody: "Gunakan rutin mudah yang sama apabila pemanggil tidak dikenali mendesak anda.",
+    routinePause: "Berhenti seketika", routinePauseBody: "Jangan biarkan desakan membuat keputusan.", routineHangUp: "Tamatkan panggilan", routineHangUpBody: "Anda tidak perlu izin untuk menamatkan panggilan.",
+    routineVerify: "Semak sendiri", routineVerifyBody: "Cari nombor rasmi sendiri dan hubungi semula.", printPlan: "Cetak pelan keselamatan",
+    trainingOnly: "Latihan sahaja — ini bukan panggilan sebenar", replayCaller: "Dengar mesej terakhir sekali lagi", callTip: "Anda boleh tamatkan panggilan pada bila-bila masa. Jangan guna maklumat peribadi sebenar.",
+  },
+  ta: {
+    brand: "ScamGym", eyebrow: "பாதுகாப்பான பயிற்சி", setupTitle: "எச்சரிக்கை அறிகுறிகளை கண்டுபிடிப்பீர்களா?", setupBody: "ஒரு அழைப்பைத் தேர்ந்தெடுத்து மோசடியை எதிர்கொள்ள பயிற்சி செய்யுங்கள்.",
+    chooseLanguage: "மொழியைத் தேர்ந்தெடுக்கவும்", chooseScenario: "பயிற்சி அழைப்பைத் தேர்ந்தெடுக்கவும்", continue: "தொடரவும்", safetyTitle: "இது ஒரு உருவகப் பயிற்சி மட்டுமே",
+    safetyBody: "உண்மையான கடவுச்சொற்கள், OTP, கணக்கு எண்கள், முகவரிகள் அல்லது தொலைபேசி எண்களைப் பகிர வேண்டாம். முக்கிய தகவல்கள் நீக்கப்படும்.", understand: "எனக்குப் புரிகிறது",
+    incoming: "பயிற்சி அழைப்பு வருகிறது", simulated: "பாதுகாப்பான உருவகம்", answer: "அழைப்பை ஏற்கவும்", decline: "திரும்பிச் செல்லவும்", listening: "கேட்கிறது...",
+    holdToSpeak: "பேச தட்டவும்", release: "அனுப்ப மீண்டும் தட்டவும்", typeInstead: "தட்டச்சு செய்யவும்", typeLabel: "உங்கள் பதில்", typePlaceholder: "நீங்கள் சொல்வதை தட்டச்சு செய்யவும்",
+    send: "அனுப்பவும்", endCall: "அழைப்பை முடிக்கவும்", callerSpeaking: "அழைப்பவர் பேசுகிறார்...", preparing: "அழைப்பைத் தயாரிக்கிறது...", analysing: "உங்கள் முடிவுகளை மதிப்பிடுகிறது...",
+    transcript: "அழைப்பு உரை", practice: "பயிற்சி அழைப்பு", debriefTitle: "உங்கள் மோசடி எதிர்ப்பு மதிப்பாய்வு", scoreLabel: "எதிர்ப்பு மதிப்பெண்", spotted: "உங்கள் ஐந்து பாதுகாப்புத் திறன்கள்",
+    missed: "நினைவில் கொள்ள வேண்டிய எச்சரிக்கைகள்", safer: "பாதுகாப்பான பதில்", listenCoach: "பயிற்சியாளரைக் கேட்கவும்", stopCoach: "ஒலியை நிறுத்தவும்", retry: "மீண்டும் பயிற்சி",
+    newScenario: "வேறு அழைப்பைத் தேர்ந்தெடுக்கவும்", points: "புள்ளிகள்", fallback: "ஒலி கிடைக்கவில்லை. செய்தியைப் படித்து தொடரலாம்.",
+    micError: "மைக்ரோஃபோன் அணுகல் தோல்வியடைந்தது. பதிலைத் தட்டச்சு செய்யவும்.", networkError: "சேவை அதிக நேரம் எடுக்கிறது. மீண்டும் முயலவும் அல்லது டெமோ பயன்முறையைப் பயன்படுத்தவும்.",
+    redacted: "உங்கள் பாதுகாப்பிற்காக முக்கிய தகவல்கள் நீக்கப்பட்டன.", loadingAudio: "ஒலி தயாராகிறது...", elapsed: "அழைப்பு நேரம்", privacy: "இந்தப் பயிற்சிக்குப் பிறகு எதுவும் சேமிக்கப்படாது.",
+    progressSetup: "தேர்வு", progressCall: "பயிற்சி", progressReview: "மதிப்பாய்வு", proofLine: "3 மோசடி வகைகள் · 4 மொழிகள் · தனியுரிமை முதன்மை",
+    pressureMap: "அழுத்தம் எப்படி மாறியது", pressureMapBody: "ஒவ்வொரு அழைப்பாளர் செய்தியின் பின்னுள்ள தந்திரத்தைப் பாருங்கள். அழைப்பின்போது இவை மறைக்கப்பட்டன.",
+    safetyRoutine: "மூன்று படி வெளியேறும் திட்டம்", safetyRoutineBody: "அறியாத அழைப்பாளர் அழுத்தும்போது இதே எளிய முறையைப் பயன்படுத்துங்கள்.",
+    routinePause: "நிறுத்துங்கள்", routinePauseBody: "அவசரம் உங்கள் முடிவை எடுக்க விடாதீர்கள்.", routineHangUp: "அழைப்பை முடிக்கவும்", routineHangUpBody: "அழைப்பை முடிக்க அனுமதி தேவையில்லை.",
+    routineVerify: "சரிபார்க்கவும்", routineVerifyBody: "அதிகாரப்பூர்வ எண்ணை நீங்களே கண்டுபிடித்து அழைக்கவும்.", printPlan: "பாதுகாப்புத் திட்டத்தை அச்சிடவும்",
+    trainingOnly: "பயிற்சி மட்டும் — இது உண்மையான அழைப்பு அல்ல", replayCaller: "கடைசி செய்தியை மீண்டும் கேட்கவும்", callTip: "எப்போது வேண்டுமானாலும் அழைப்பை முடிக்கலாம். உண்மையான தனிப்பட்ட விவரங்களைப் பயன்படுத்த வேண்டாம்.",
+  },
+} as const;
+
+export type CopyKey = keyof (typeof copy)["en"];
+export const getCopy = (language: LanguageCode) => copy[language];
+
+export const behaviorLabels: Record<LanguageCode, Record<string, string>> = {
+  en: { verify_officially: "End the call and verify independently", refuse_sensitive: "Refuse sensitive information or payment", question_pressure: "Question urgency, authority, or secrecy", refuse_action: "Refuse links, transfers, or software", consult_trusted: "Consult someone trusted" },
+  zh: { verify_officially: "结束通话并自行核实", refuse_sensitive: "拒绝透露敏感资料或付款", question_pressure: "质疑紧迫、权威或保密要求", refuse_action: "拒绝链接、转账或安装软件", consult_trusted: "咨询可信赖的人" },
+  ms: { verify_officially: "Tamatkan panggilan dan semak sendiri", refuse_sensitive: "Tolak maklumat sensitif atau bayaran", question_pressure: "Persoalkan desakan, kuasa atau kerahsiaan", refuse_action: "Tolak pautan, pindahan atau perisian", consult_trusted: "Rujuk seseorang yang dipercayai" },
+  ta: { verify_officially: "அழைப்பை முடித்து தனியாக சரிபார்த்தல்", refuse_sensitive: "முக்கிய தகவல் அல்லது பணம் தர மறுத்தல்", question_pressure: "அவசரம், அதிகாரம் அல்லது ரகசியத்தை கேள்வி கேட்டல்", refuse_action: "இணைப்புகள், பரிமாற்றங்கள் அல்லது மென்பொருளை மறுத்தல்", consult_trusted: "நம்பகமான ஒருவரிடம் ஆலோசித்தல்" },
+};
+
+export const tacticLabels: Record<LanguageCode, Record<Tactic, string>> = {
+  en: { authority: "False authority", urgency: "Urgency", fear: "Fear", secrecy: "Secrecy", payment: "Money request", link: "Unsafe link" },
+  zh: { authority: "冒充权威", urgency: "制造紧迫", fear: "引发恐惧", secrecy: "要求保密", payment: "要求付款", link: "不安全链接" },
+  ms: { authority: "Kuasa palsu", urgency: "Desakan", fear: "Ketakutan", secrecy: "Kerahsiaan", payment: "Permintaan wang", link: "Pautan tidak selamat" },
+  ta: { authority: "போலி அதிகாரம்", urgency: "அவசரம்", fear: "பயம்", secrecy: "ரகசியம்", payment: "பணக் கோரிக்கை", link: "பாதுகாப்பற்ற இணைப்பு" },
+};
