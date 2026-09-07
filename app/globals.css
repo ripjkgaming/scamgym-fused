@@ -271,20 +271,21 @@ h3 { margin-bottom: 6px; font-size: 1.03rem; }
 /* --- particle morph background (animation only, no text) --- */
 #morph {
   position: fixed; inset: 0; z-index: 0;
-  width: 100vw; height: 100vh; display: block;
+  width: 100vw; height: 100vh; min-width: 100vw; min-height: 100vh; display: block;
   pointer-events: none;
-  opacity: 0.85;
+  opacity: 1;
 }
+.app-shell { position: relative; z-index: 1; }
+.topbar { position: relative; z-index: 20; }
+.skip-link { z-index: 60; }
+.sos-fab { z-index: 30; }
+.sos-veil { z-index: 50; }
 .morph-note {
-  position: fixed; z-index: 40; left: 50%; bottom: 6rem; transform: translateX(-50%);
+  position: fixed; z-index: 55; left: 50%; bottom: 6rem; transform: translateX(-50%);
   display: none; max-width: 90vw; text-align: center;
   background: var(--surface); border: 1px solid var(--border);
   border-radius: 12px; padding: 0.8rem 1.2rem; color: var(--text-muted); font-size: 0.95rem;
 }
-.app-shell, .topbar { position: relative; }
-.app-shell { z-index: 1; }
-.topbar { z-index: 20; }
-
 /* --- shield tools (check a message + explain tech), ScamGym-styled --- */
 .shield-tools { display: grid; gap: 22px; }
 .shield-section { padding-top: 19px; border-top: 1px solid var(--border); }
