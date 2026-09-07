@@ -3,7 +3,7 @@ import { aiDebriefSchema, debriefRequestSchema } from "@/lib/schemas";
 import { redactSensitive } from "@/lib/redact";
 import { createDebrief } from "@/lib/scoring";
 import { groundEvidenceInTranscript } from "@/lib/judging";
-import { structuredResponse } from "@/lib/server/openai";
+import { structuredResponse } from "@/lib/server/simulator";
 import { debriefPrompt, formatHistory } from "@/lib/server/prompts";
 
 export async function POST(request: Request) {

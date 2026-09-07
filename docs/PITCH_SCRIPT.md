@@ -31,7 +31,7 @@ End the call if it has not ended automatically.
 
 ## 1:25–2:05 — Reveal the learning
 
-**Say:** “The important part is not a mysterious AI score. OpenAI identifies evidence in the transcript, then our application applies a fixed 100-point rubric. Every point is visible and tied to the learner’s own words.”
+**Say:** “The important part is not a mysterious AI score. The simulator model identifies evidence in the transcript, then our application applies a fixed 100-point rubric. Every point is visible and tied to the learner’s own words.”
 
 **Action:** Scroll through the evidence, then pause at **How the pressure changed**.
 
@@ -39,7 +39,7 @@ End the call if it has not ended automatically.
 
 ## 2:05–2:38 — Technical depth
 
-**Say:** “The pipeline combines ElevenLabs Scribe for multilingual transcription, OpenAI Structured Outputs for safe scenario progression and evidence extraction, and ElevenLabs speech for distinct caller and coach voices. Zod validates every model response. Keys stay server-side. Calls time out after two minutes or six turns, and every external dependency has a timeout, retry, and safe fallback. A cached golden path protects the live demo during an outage.”
+**Say:** “The pipeline combines ElevenLabs Scribe for multilingual transcription, OpenRouter-served Gemma 4 31B for safe scenario progression and evidence extraction, and ElevenLabs speech for distinct caller and coach voices. Zod validates every model response. Keys stay server-side. Calls time out after two minutes or six turns, and every external dependency has a timeout, retry, and safe fallback. A cached golden path protects the live demo during an outage.”
 
 ## 2:38–3:00 — Impact and close
 

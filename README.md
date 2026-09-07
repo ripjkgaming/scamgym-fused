@@ -2,7 +2,7 @@
 
 ScamGym is a local-first voice-call simulator that helps Singapore seniors practise responding safely to common scams. It supports fake bank, government impersonation, and parcel delivery scenarios in English, Mandarin, Malay, and Tamil.
 
-Unlike a scam-information chatbot, ScamGym rehearses the moment of pressure. Tactic labels stay hidden during the call, then an annotated pressure map connects each caller message to fear, urgency, secrecy, false authority, payment pressure, or an unsafe link. OpenAI extracts evidence for a fixed rubric, application code calculates the score, and ElevenLabs gives the caller and coach distinct voices.
+Unlike a scam-information chatbot, ScamGym rehearses the moment of pressure. Tactic labels stay hidden during the call, then an annotated pressure map connects each caller message to fear, urgency, secrecy, false authority, payment pressure, or an unsafe link. OpenRouter serves the free Gemma 4 31B chat model for caller turns and evidence extraction, application code calculates the score, and ElevenLabs gives the caller and coach distinct voices. The check-a-message tools use the free Liquid LFM 2.5 model, also via OpenRouter.
 
 ## Senior-first interaction design
 
@@ -15,7 +15,7 @@ Unlike a scam-information chatbot, ScamGym rehearses the moment of pressure. Tac
 ## Start locally
 
 1. Install dependencies with `npm install`.
-2. Copy `.env.example` to `.env.local` and add your API keys and ElevenLabs voice IDs.
+2. Copy `.env.example` to `.env.local` and add your OpenRouter key and ElevenLabs voice IDs.
 3. Start the app with `npm run dev`.
 4. Open `http://localhost:3000`.
 

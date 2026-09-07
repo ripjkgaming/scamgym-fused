@@ -85,7 +85,7 @@ async function checkTranscription() {
 }
 
 const health = await (await request("/api/health", {}, 5_000)).json();
-if (!health.openai || !health.elevenlabs || !health.voices) throw new Error("health check reports missing configuration");
+if (!health.simulator || !health.elevenlabs || !health.voices) throw new Error("health check reports missing configuration");
 console.log("health: configured");
 await checkTurns();
 await checkSpeech();

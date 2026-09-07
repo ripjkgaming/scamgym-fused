@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { agentTurnSchema, aiAgentTurnSchema, turnRequestSchema } from "@/lib/schemas";
 import { SCENARIOS } from "@/lib/scenarios";
-import { structuredResponse } from "@/lib/server/openai";
+import { structuredResponse } from "@/lib/server/simulator";
 import { formatHistory, turnPrompt } from "@/lib/server/prompts";
 import { constrainAgentTurn, shouldForceSessionEnd } from "@/lib/scenario-engine";
 

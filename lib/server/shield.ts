@@ -2,7 +2,7 @@
 // check-a-message / explain-tech / family-note tools.
 // Ported from the scam-shield Express app; response shapes are identical.
 
-const MODEL = process.env.SHIELD_MODEL || "inclusionai/ling-3.0-flash";
+const MODEL = process.env.SHIELD_MODEL || "liquid/lfm-2.5-2.6b:free";
 
 export const SHIELD_MAX_INPUT = 4000;
 
