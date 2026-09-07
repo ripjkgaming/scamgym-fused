@@ -18,7 +18,7 @@ export default function SosButton() {
   return (
     <>
       <button type="button" className="sos-fab" onClick={() => setOpen(true)}>
-        <Siren size={20} weight="fill" aria-hidden="true" /> I think I am being scammed
+        <Siren size={20} weight="fill" aria-hidden="true" /> <span>I think I am being scammed</span>
       </button>
       {open && (
         <div className="sos-veil" onClick={(e) => e.target === e.currentTarget && setOpen(false)}>

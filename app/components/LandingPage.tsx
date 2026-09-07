@@ -144,17 +144,17 @@ export default function LandingPage() {
             </div>
             <dl className="hero-stats">
               <div className="stat-ring" data-count={t.statCalls}>
-                <span className="stat-num">0</span>
+                <span className="stat-num">{t.statCalls}</span>
                 <dt className="sr-only">scam types</dt>
                 <dd>{t.statCallsLabel}</dd>
               </div>
               <div className="stat-ring" data-count={t.statMinutes}>
-                <span className="stat-num">0</span>
+                <span className="stat-num">{t.statMinutes}</span>
                 <dt className="sr-only">minutes</dt>
                 <dd>{t.statMinutesLabel}</dd>
               </div>
               <div className="stat-ring" data-count={t.statLanguages}>
-                <span className="stat-num">0</span>
+                <span className="stat-num">{t.statLanguages}</span>
                 <dt className="sr-only">languages</dt>
                 <dd>{t.statLanguagesLabel}</dd>
               </div>
@@ -181,7 +181,7 @@ export default function LandingPage() {
             </ol>
             <p className="rail-foot">
               <ShieldCheck size={16} weight="fill" />
-              Labels stay hidden during a real rehearsal. They are revealed afterwards.
+              <span>Labels stay hidden during a real rehearsal. They are revealed afterwards.</span>
             </p>
           </aside>
         </div>
@@ -365,7 +365,7 @@ export default function LandingPage() {
             </ul>
             <p className="tools-note">
               <WarningCircle size={17} weight="fill" />
-              Sensitive details are stripped before anything is analysed.
+              <span>Sensitive details are stripped before anything is analysed.</span>
             </p>
           </div>
           <div className="tools-panel">
@@ -444,8 +444,10 @@ export default function LandingPage() {
         </div>
         <p className="sos-strip">
           <Siren size={18} weight="fill" />
-          Mid-scam right now? Hang up first — then <a href="/check">check the message</a> or open the red button on
-          any page.
+          <span>
+            Mid-scam right now? Hang up first — then <a href="/check">check the message</a> or open the red button on
+            any page.
+          </span>
         </p>
       </footer>
     </div>
